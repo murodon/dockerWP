@@ -23,8 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-test!
+<body <?php body_class(); ?>
 <div class="hfeed site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
