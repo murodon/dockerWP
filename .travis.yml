@@ -1,0 +1,18 @@
+language: php
+sudo: false
+php:
+- '5.6'
+before_script:
+- nvm install 4.2
+- npm install
+script:
+- find . \( -name '*.php' \) -exec php -lf {} \;
+after_success:
+- bash ./bin/deploy.sh
+env:
+  global:
+    - GIT_COMMITTER_NAME=travis-ci
+    - GIT_COMMITTER_EMAIL=murota@ginichi.com
+    - GIT_AUTHOR_NAME=travis-ci
+    - GIT_AUTHOR_EMAIL=murota@ginichi.com
+    - secure: Dl/D23DtOLinJ8LLUMiTnsGNfIOPrCjl7rqHX3xipMgqe+aYkZbT1Xsa3l+c7pyE82ROVKhd4VnGrGkbfbFBtMKW9VFcY/Kw6H6vGuVNE67s3RE9iotydAdWQ3nAhRSON8BqrLaL2uwb/EA3O6RifxXLaNEhMMTm1Hbn1FkzVGQaWvX76t5ra4NxoojTHk4orGZ2WiXfD09iIrgPiDioKYUmKRnaQ+ueawi/Vmde24Y262huWppu/GhYpT+rD30SyOSGxMKkZn/IRialKq53xHZTJ7IK7kYJgP16SHG2wtfOhhT2I9ekby+SZXdS03/aFQsYS464Pm2WWD5GSGudU3j0xMcZ5UbIkMJ20ouxCArk9OW+FQT0fnH7Syjh/ThFqsdD0XfGU5AQMLtRvGNXWWokQSdsKzPojJWcQ1AVvpdBi8/Gs6KpvD30qD6xuyIMuIAus0vdeHm9EiPM5mQvblmZ0Zo9N5hvz9Sdp6BQvd46FUt2mhz4U/bjR1cPv4wXwJiGe8wdCGhJGq0QQ1Uai+SaZE1BWA7vPU5hh8EXkB5M3CKgjnxoXBgexYMj8ZrH8opPgyQiyheUUTHItpx4p+58pEvuEMSDTGMDpGAb7z3eayWKsJSWPN3nqXxnleAB5pL81istMK+rKfe5gycpNUtw9DDtQOygH9mjhbF33tA=
